@@ -1,0 +1,12 @@
+When in desktop mode background picture should be 'AI_Image.png'.
+When website is in mobile view then picture should be 'AI_mobile.png'
+
+When in Desktop mode the text size for all the headings should be max 75% of Screen width or min 60%.
+
+"(for only processed dataset)" change its color to brown
+
+All the team members name also should be brown.
+
+Create a notification that gives option for closing only after 10 secs and contains the following information:
+
+    PCA - Principal Component Analysis is a unsupervised dimensionality-reduction technique
