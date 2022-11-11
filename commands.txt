@@ -1,0 +1,3 @@
+commands
+pip install Jinja2
+pip install --upgrade nbformat
