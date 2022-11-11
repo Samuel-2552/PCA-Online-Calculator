@@ -9,4 +9,14 @@ All the team members name also should be brown.
 
 Create a notification that gives option for closing only after 10 secs and contains the following information:
 
-    PCA - Principal Component Analysis is a unsupervised dimensionality-reduction technique
+    PCA - Principal Component Analysis is a unsupervised, dimensionality-reduction, feature-extraction technique used mostly for classification!!
+
+After accepting csv file just below that add radio buttons with following questions:
+     1. Does this dataset has header? yes/no
+     2. Does this dataset have label coloumn? yes/no 
+     3. Select which one you want to apply? Scaling/Standardization/Normalization/None
+     4. Is the Dataset having null values? yes/no
+     5. How many components you want to reduce it to? number input
+     6. Do you want to visualize your dataset? yes/no
+
+  ** After checking all the radio buttons, then only the submit button should work.
