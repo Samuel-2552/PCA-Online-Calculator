@@ -18,5 +18,6 @@ After accepting csv file just below that add radio buttons with following questi
      4. Is the Dataset having null values? yes/no
      5. How many components you want to reduce it to? number input
      6. Do you want to visualize your dataset? yes/no
+     7. Do you want to download the code? yes/no if yes then as pdf or ipynb?
 
   ** After checking all the radio buttons, then only the submit button should work.
