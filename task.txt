@@ -1,5 +1,4 @@
-When in desktop mode background picture should be 'AI_Image.png'.
-When website is in mobile view then picture should be 'AI_mobile.png'
+Background Changed : Samuel done.
 
 When in Desktop mode the text size for all the headings should be max 75% of Screen width or min 60%.
 
