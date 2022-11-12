@@ -276,3 +276,11 @@ footer{
     color: #e8ef7a;
     text-shadow: 2px 2px #b08f3d;
   }
+
+ 
+      body {
+        background: url('AI_mobile.png') transparent center center / cover;
+        height: 100%;
+        
+      }
+      
