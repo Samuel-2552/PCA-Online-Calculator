@@ -13,10 +13,11 @@ Create a notification that gives option for closing only after 10 secs and conta
 After accepting csv file just below that add radio buttons with following questions:
      1. Does this dataset has header? yes/no
      2. Does this dataset have label coloumn? yes/no 
+            if yes then ask: 
+                Do you want to visualize your dataset? yes/no
      3. Select which one you want to apply? Scaling/Standardization/Normalization/None
      4. Is the Dataset having null values? yes/no
      5. How many components you want to reduce it to? number input
-     6. Do you want to visualize your dataset? yes/no
-     7. Do you want to download the code? yes/no if yes then as pdf or ipynb?
+     6. Do you want to download the code? yes/no if yes then as pdf or ipynb? (Extra Feature can do if time permits).
 
   ** After checking all the radio buttons, then only the submit button should work.
