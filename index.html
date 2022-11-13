@@ -1,140 +1,55 @@
-<html>
-    <head>
-        <title>PCA-Online-Calculator</title>
-        <link rel="stylesheet" href="style.css"/>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
-    </head>
-<body style="background: url('AI_mobile.png') transparent center center / cover;
-        height: 100%;">
-        
-        <header>
-            <h2>Principal Component Analysis</h2><h4>(for only processed dataset)</h4><br>
-        </header>    
-            
-            <section>
-            <!--<p class="lead">(credits: Samuel, Santhosh Kumaran, Poorvaja, Shivesh)</p>-->
-            <br>
-            
+<!DOCTYPE html>
+<html lang="en">
 
-            <!-- Upload  -->
-            <form action="/upload" method="POST" id="file-upload-form" class="uploader" enctype="multipart/form-data">
-            <input id="file-upload" type="file" name="file" accept=".csv" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "icon" href = "PCA.png"  type = "image/x-icon">
+    <title>PCA Calculator</title>
+</head>
 
-            <label for="file-upload" id="file-drag" >
-                <img id="file-image" src="#" alt="Preview" class="hidden">
-                <div id="start">
-                <i class="fa fa-download" aria-hidden="true"></i>
-                <div>Select a csv file or drag here</div>
-                <div id="notimage" class="hidden">Please select CSV file</div>
-                <span id="file-upload-btn" class="btn btn-primary">Select a CSV file</span>
-                </div>
-                <div id="response" class="hidden">
-                <div id="messages"></div>
-                <progress class="progress" id="file-progress" value="0">
-                    <span>0</span>%
-                </progress>
-                </div>
-                <div>
-                <input id='sub_btn' class="btn btn-primary" type='submit'/>
-                </div>
-                
-            </label>
-            
-            </form>
-        </section>
-        <!--<section>
-            <h1 style="clear:left; text-align: center;">hello</h1>
-        </section>-->
-
-        <footer class="text-center bg-gray-900 text-white">
-               
-            <br>
-            <br>
-            <!--<div class="flex flex-row justify-center mb-6 lg:text-2xl text-lg">
-                <p class="text-left" style="font-size:30px;"><br>MEET OUR TEAM</p>
-        </div>-->
-            <!--<div class="container">
-                <p class="text-left " style="font-size:30px;"><br>MEET OUR TEAM</p>
-            </div>-->
-            <div class="container-modified">
-                <div class="flex flex-row justify-center mb-6 lg:text-2xl text-lg">
-                <h3 class="text-left meet-our-team" style="font-size:50px;"><br>Meet Our Team</h3>
-        </div>
-        <br><br>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="our-team">
-                            <div class="pic">
-                                <img src="Samuel.png">
-                            </div>
-                            <h3 class="title">Samuel Joseph</h3>
-                            <span class="post">Team Lead and Head</span>
-                            <ul class="social">
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                                <li><a href="#" class="fa fa-linkedin"></a></li>
-                                <li><a href="#" class="fa fa-instagram"></a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-             
-                    <div class="col-md-3 col-sm-6">
-                        <div class="our-team">
-                            <div class="pic">
-                                <img src="Santhosh.png">
-                            </div>
-                            <h3 class="title">Santhosh Kumaran</h3>
-                            <span class="post">Front End Devloper</span>
-                            <ul class="social">
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                                <li><a href="#" class="fa fa-linkedin"></a></li>
-                                <li><a href="#" class="fa fa-instagram"></a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-            
-                    <div class="col-md-3 col-sm-6">
-                        <div class="our-team">
-                            <div class="pic">
-                                <img src="Poorvaja.png">
-                            </div>
-                            <h3 class="title">Poorvaja R</h3>
-                            <span class="post">Data Scientist</span>
-                            <ul class="social">
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                                <li><a href="#" class="fa fa-linkedin"></a></li>
-                                <li><a href="#" class="fa fa-instagram"></a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="our-team">
-                            <div class="pic">
-                                <img src="Shivesh.png">
-                            </div>
-                            <h3 class="title">Shivesh PR</h3>
-                            <span class="post">ML Engineer</span>
-                            <ul class="social">
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                                <li><a href="#" class="fa fa-linkedin"></a></li>
-                                <li><a href="#" class="fa fa-instagram"></a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-            
-                </div>
-            </div>
-        
-        
-    </footer>
-    </body>
-    <script src="script.js"></script>
+<body>
+    <!--Page 1-->
+    <div style="position: relative; width: 100%; height: 0; padding-top: 56.2225%;
+        padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+        border-radius: 8px; will-change: transform;">
+        <iframe loading="lazy"
+            style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+            src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFRwo52nKs&#x2F;view?embed"
+            allowfullscreen="allowfullscreen" allow="fullscreen">
+        </iframe>
+    </div>
+    <!--Page 2-->
+    <div style="position: relative; width: 100%; height: 0; padding-top: 56.2225%;
+        padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+        border-radius: 8px; will-change: transform;">
+        <iframe loading="lazy"
+            style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+            src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFRz8uZ0bQ&#x2F;view?embed"
+            allowfullscreen="allowfullscreen" allow="fullscreen">
+        </iframe>
+    </div>
+    <!--Page 3-->
+    <div style="position: relative; width: 100%; height: 0; padding-top: 56.2225%;
+        padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+        border-radius: 8px; will-change: transform;">
+        <iframe loading="lazy"
+            style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+            src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFRz5C9-hk&#x2F;view?embed"
+            allowfullscreen="allowfullscreen" allow="fullscreen">
+        </iframe>
+    </div>
+    <!--Page 4-->
+    <div style="position: relative; width: 100%; height: 0; padding-top: 56.2225%;
+        padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+        border-radius: 8px; will-change: transform;">
+        <iframe loading="lazy"
+            style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+            src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFRz6X687s&#x2F;view?embed"
+            allowfullscreen="allowfullscreen" allow="fullscreen">
+        </iframe>
+    </div>
+</body>
 
 </html>
