@@ -1,0 +1,10 @@
+Flask
+numpy
+pandas
+plotly
+matplotlib
+warnings
+sklearn
+json
+Jinja2
+Werkzeug

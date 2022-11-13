@@ -1,5 +1,7 @@
         // File Upload
 //
+var enb=false;
+enb1=false;
 document.getElementById("sub_btn").setAttribute('style','opacity:0.5');
 document.getElementById("sub_btn").disabled = true;
 function ekUpload() {
@@ -66,11 +68,9 @@ function ekUpload() {
       document.getElementById("start").classList.add("hidden");
       document.getElementById("response").classList.remove("hidden");
       document.getElementById("notimage").classList.add("hidden");
-      // Thumbnail Preview
-      document.getElementById("file-image").classList.remove("hidden");
-      document.getElementById("file-image").src = URL.createObjectURL(file);
-      document.getElementById("sub_btn").setAttribute('style','opacity:1');
-      document.getElementById("sub_btn").disabled = false;
+      enb=true;
+      enable();
+      
     } else {
       document.getElementById("file-image").classList.add("hidden");
       document.getElementById("notimage").classList.remove("hidden");
@@ -141,10 +141,30 @@ function ekUpload() {
     document.getElementById("file-drag").style.display = "none";
   }
 }
+function enable(){
+  if(enb==true)
+  {
+    document.getElementById("sub_btn").setAttribute('style','opacity:1');
+    document.getElementById("sub_btn").disabled = false;
+  }
+  else
+  {
+    document.getElementById("sub_btn").setAttribute('style','opacity:0.5');
+    document.getElementById("sub_btn").disabled = true;
+  }
+
+}
 ekUpload();
 function check() {
-  if (document.getElementByName('q2').value == 0) {
-      document.getElementById('yes').disabled = true;
-      document.getElementById('no').disabled = true;
+  if(document.getElementById('q1').checked){
+    if(document.getElementById('q2').checked){
+      if(document.getElementById('q3').checked){
+        if(document.getElementById('q4').checked){
+          enb1=true;
+          enable();
+        }
+      }
+    }
   }
 }
+
