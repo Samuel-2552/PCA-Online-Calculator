@@ -53,7 +53,7 @@ def predict():
             df = pd.read_csv('PCA/test-data-revised.csv')
         else:
             df = pd.read_csv('PCA/test-data-revised.csv',header=None)
-
+        
         if label==1:
             labeled=df[df.columns[-1]]
             df=df.drop([df.columns[-1]],axis=1)
@@ -70,6 +70,16 @@ def predict():
         scaled = pd.DataFrame(scaler, columns=feats)
         if label==1:
             scaled['Label'] = labeled 
+
+        if label==1 and visualization==1 and len(feats)>components:
+            features = feats
+            fig = px.scatter_matrix(
+                scaled,
+                dimensions=features,
+                color="Label"
+            )
+            fig.update_traces(diagonal_visible=True)
+            beforegraphJSON = plotly.offline.plot(fig, include_plotlyjs=False, output_type='div')
 
         if label==1:
             X, y = scaled.drop(['Label'], axis=1), scaled['Label']
@@ -92,7 +102,8 @@ def predict():
                 print(pca1.explained_variance_ratio_)#mention what it is : Shivesh
                 print(pca1.components_)# mention this to!
         os.remove(file.filename)
-    return str(pca1.components_)
+
+    return render_template('index.html',output=str(pca1.components_), before_pca=beforegraphJSON)
 
                                                                                                                             
 
