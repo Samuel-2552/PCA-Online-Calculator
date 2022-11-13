@@ -73,7 +73,7 @@ def predict():
             scaled['Label'] = labeled 
 
         #before applying PCA Visualization #Shivesh add this as title
-        if label==1 and visualization==1 and len(feats)>components:
+        if label==1 and visualization==1 and len(feats)>=components:
             features = feats
             fig = px.scatter_matrix(
                 scaled,
@@ -81,14 +81,14 @@ def predict():
                 color="Label"
             )
             fig.update_traces(diagonal_visible=True)
-            graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+            graphJSON1 = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
             print("graph working")
             
 
         if label==1:
             X, y = scaled.drop(['Label'], axis=1), scaled['Label']
 
-            if len(feats)>components:
+            if len(feats)>=components:
                 if components == 0:
                     components=None
                 pca1, trans1 = create_pca_label(X=X, y=y, n_components=components)
@@ -99,15 +99,34 @@ def predict():
         else:
             X = scaled
 
-            if len(feats)>components:
+            if len(feats)>=components:
                 if components == 0:
                     components=None
                 pca1, trans1 = create_pca(X=X, n_components=components)
                 print(pca1.explained_variance_ratio_)#mention what it is : Shivesh
                 print(pca1.components_)# mention this to!
+
+        #After PCA
+        if label==1 and visualization==1 and len(feats)>=components:
+
+            pca = PCA()
+            components = pca.fit_transform(df[features])
+            labels = {
+                str(i): f"PC {i+1} ({var:.1f}%)"
+                for i, var in enumerate(pca.explained_variance_ratio_ * 100)
+            }
+            fig = px.scatter_matrix(
+            components,
+            labels=labels,
+            dimensions=range(len(features)),
+            color=scaled["Label"]
+            )
+            fig.update_traces(diagonal_visible=True)
+            graphJSON2 = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+
         os.remove(file.filename)
 
-    return render_template('index.html',graphJSON=graphJSON,output1=str(pca1.explained_variance_ratio_),output2=str(pca1.components_))
+    return render_template('index.html',graphJSON1=graphJSON1,graphJSON2=graphJSON2,output1=str(pca1.explained_variance_ratio_),output2=str(pca1.components_))
 
                                                                                                                             
 

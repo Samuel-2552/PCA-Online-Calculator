@@ -3965,21 +3965,16 @@
                     </div>
                 </div>
                 <div id="GJX96iUk4VXzQlkD" style="z-index:2;position:relative;">
-                    <div id="J9VOjKlDeYOPKUlr" style="padding-top:22.63578947%;transform:rotate(0deg);">
-                        <div id="ymXaOHE4FuvcDu4g" style="top:0px;left:0px;width:100%;position:absolute;height:100%;">
-                            <div id="mWFWrAi91xk9aEUI" style="width:100%;opacity:1.0;height:100%;">
+                    
                                 <div id="UNIVYttpYpBcfL2P"
                                     style="transform:scale(1, 1);overflow:hidden;width:100%;height:100%;">
                                     <div id="KFkzPAgQIb92TTlf"
                                         style="transform: rotate(0deg); top: -5.32144%; left: 0%; width: 100%; position: relative; opacity: 1; height: 114.983%;">
                                         <!--<img src="images/ef1b7c624d09065d52cddb4c636adb0a.png" alt="" loading="lazy"
                                             style="width:100%;height:100%;">-->
-                                            <div id='chart' class='chart'”></div>
+                                            <div id='chart1' class='chart1'”></div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div id="ixmZHeMi9cN1xdjE" style="z-index:6;position:relative;">
                     <div id="lr8ZRgyOlGZR1mAK"
@@ -3994,21 +3989,16 @@
                     </div>
                 </div>
                 <div id="ZGuEaB9gHx4ZZxPg" style="z-index:3;position:relative;">
-                    <div id="EyoUjQvqaf79shv6" style="padding-top:21.95846776%;transform:rotate(0deg);">
-                        <div id="DJacpUFSZpCe91NM" style="top:0px;left:0px;width:100%;position:absolute;height:100%;">
-                            <div id="q9wnxIaqSXXmDb3h" style="width:100%;opacity:1.0;height:100%;">
+                    
                                 <div id="IMN1uj8WJtshPkkj"
                                     style="transform:scale(1, 1);overflow:hidden;width:100%;height:100%;">
                                     <div id="Qpz8EpMTHSavzovB"
                                         style="transform: rotate(0deg); top: -12.8565%; left: 0%; width: 100%; position: relative; opacity: 1; height: 121.31%;">
                                         <!--<img src="images/c04e77d02f2b8ef15b9f31277ab96f2b.png" alt="" loading="lazy"
                                             style="width:100%;height:100%;">-->
-                                        {{after_pca}}
+                                            <div id='chart2' class='chart2'”></div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div id="Sf6QY3OXsxHmzZsK" style="z-index:7;position:relative;">
                     <div id="Cc2szDj052ZJKRj5"
@@ -4023,9 +4013,7 @@
                     </div>
                 </div>
                 <div id="zgVN3mG7bFaN7ixy" style="z-index:1;position:relative;">
-                    <div id="bHlto0zR83P37OW9" style="padding-top:23.28431373%;transform:rotate(0deg);">
-                        <div id="ZNiPeMLe2WH29P4y" style="top:0px;left:0px;width:100%;position:absolute;height:100%;">
-                            <div id="b96BlLrq4Yfn55YH" style="width:100%;opacity:1.0;height:100%;">
+                    
                                 <div id="FfP7DB0Xc6xUEgmx"
                                     style="transform:scale(1, 1);width:100%;height:100%;">
                                     <div id="Mceo9JRMI4UdsvNq"
@@ -4034,9 +4022,6 @@
                                         <p style="color:#fdfaf5;font-size: 15px;">{{output2}}</p>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -4527,7 +4512,9 @@
 </body>
 <script src="static/script.js"></script>
 <script type='text/javascript'>
-  var graphs = {{graphJSON | safe}};
-  Plotly.plot('chart',graphs,{});
+  var graphs1 = {{graphJSON1 | safe}};
+  var graphs2 = {{graphJSON2 | safe}};
+  Plotly.plot('chart1',graphs1,{});
+  Plotly.plot('chart2',graphs2,{});
 </script>
 </html>
