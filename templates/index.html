@@ -3781,7 +3781,7 @@
                                     <div id="Bu13YL1zQOMmlJpP"
                                         style="transform: rotate(0deg);  left: -38%; width: 170.645%; position: relative; opacity: 1; height: 170.346%;">
                                         <!-- Upload  -->
-                                        <form action="#" method="POST" id="file-upload-form" class="uploader"
+                                        <form action="/predict" method="POST" id="file-upload-form" class="uploader"
                                             enctype="multipart/form-data">
                                             <input id="file-upload" type="file" name="file" accept=".CSV" />
 
@@ -3806,7 +3806,6 @@
 
                                             </label>
 
-                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -3831,7 +3830,6 @@
                         style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
                         <div id="mN6t4MXi9GgRoQXV"
                             style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;height:100%;">
-                            <form>
                             <p id="BMRWCPfVdbNPqWXb"
                                 style="color:#28282b;letter-spacing:-0.01em;font-family:YADSwGZbFSo-0;line-height:1.53em;">
                                 <span id="TqmceH19mvSfDO3x" style="color:#28282b;font-weight:700;">Q1. </span><span
@@ -3839,7 +3837,7 @@
                             </p>
                             <p id="WM7hzOcYBYNo7ebA"
                                 style="color:#28282b;letter-spacing:-0.01em;font-family:YADSwGZbFSo-0;line-height:1.53em;">
-                                <span id="g7lyHRJJfqH0aGpQ" style="color:#28282b;"><input type="radio" name="q1">Yes <input type="radio" name="q1">No</span>
+                                <span id="g7lyHRJJfqH0aGpQ" style="color:#28282b;"><input type="radio" name="q1" value="1">Yes <input type="radio" name="q1" value="0">No</span>
                             </p>
                             <p id="uRYnN028L29613sm"
                                 style="color:#28282b;letter-spacing:-0.01em;font-family:YADSwGZbFSo-0;line-height:1.53em;">
@@ -3848,7 +3846,7 @@
                             </p>
                             <p id="sr1fd7FQVDW0RNmT"
                                 style="color:#28282b;letter-spacing:-0.01em;font-family:YADSwGZbFSo-0;line-height:1.53em;">
-                                <span id="NofAtUGT5ygiic8B" style="color:#28282b;"><input type="radio" name="q2">Yes <input type="radio" name="q2">No</span>
+                                <span id="NofAtUGT5ygiic8B" style="color:#28282b;"><input type="radio" name="q2" value="1">Yes <input type="radio" name="q2" value="0" onclick="check()">No</span>
                             </p>
                             <p id="sUQtflMxUdNwyxAN"
                                 style="color:#28282b;letter-spacing:-0.01em;font-family:YADSwGZbFSo-0;line-height:1.53em;">
@@ -3864,7 +3862,7 @@
                             <p id="C8azeEaKP6IXyVNQ"
                                 style="color:#28282b;letter-spacing:-0.01em;font-family:YADSwGZbFSo-0;line-height:1.53em;">
                                 <span id="hZqIgZ2TqCD31lLx" style="color:#28282b;white-space:pre-wrap;"> </span><span
-                                    id="CreqCR2DwhX1soh3" style="color:#28282b;"><input type="radio" name="q3">Yes <input type="radio" name="q3">No</span>
+                                    id="CreqCR2DwhX1soh3" style="color:#28282b;"><input type="radio" name="q3" value="1" id="yes">Yes <input type="radio" name="q3" value="0" id="no" >No</span>
                             </p>
                             <!--<p id="YkF2KY8Ceqo5SSnI"
                                 style="color:#28282b;letter-spacing:-0.01em;font-family:YADSwGZbFSo-0;line-height:1.53em;">
@@ -3883,7 +3881,7 @@
                             <p id="ymfjLILjyqr5NdjM"
                                 style="color:#28282b;letter-spacing:-0.01em;font-family:YADSwGZbFSo-0;line-height:1.53em;">
                                 <span id="zf9riWCd0y0oNJ7s"
-                                    style="color:#28282b;"><input type="radio" name="q4">Standardization<br><input type="radio" name="q4">Normalization<br><input type="radio" name="q4">None</span>
+                                    style="color:#28282b;"><input type="radio" name="q4" value="1">Standardization<br><input type="radio" name="q4" value="2">Normalization<br><input type="radio" name="q4" value="0">None</span>
                             </p>
                             <p id="opBqyFpUhjLlRF6X"
                                 style="color:#28282b;letter-spacing:-0.01em;font-family:YADSwGZbFSo-0;line-height:1.53em;">
@@ -3893,7 +3891,7 @@
                             </p>
                             <p id="dSPS5D0mrORFWe75"
                                 style="color:#28282b;letter-spacing:-0.01em;font-family:YADSwGZbFSo-0;line-height:1.53em;">
-                                <span id="AabcX1vfIsgQHHR9" style="color:#28282b;"><input type="number" name="q5" placeholder="Number Input"</span>
+                                <span id="AabcX1vfIsgQHHR9" style="color:#28282b;"><input type="number" name="q5" placeholder="Number Input"/></span>
                             </p>
                             <!--<p id="t8T6uzkkEJxk7zVy"
                                 style="color:#28282b;letter-spacing:-0.01em;font-family:YADSwGZbFSo-0;line-height:1.53em;">
