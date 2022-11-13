@@ -82,6 +82,7 @@ def predict():
             )
             fig.update_traces(diagonal_visible=True)
             graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+            print("graph working")
             
 
         if label==1:
@@ -106,7 +107,7 @@ def predict():
                 print(pca1.components_)# mention this to!
         os.remove(file.filename)
 
-    return render_template('index.html',before_pca=graphJSON,output1=str(pca1.explained_variance_ratio_),output2=str(pca1.components_))
+    return render_template('index.html',graphJSON=graphJSON,output1=str(pca1.explained_variance_ratio_),output2=str(pca1.components_))
 
                                                                                                                             
 
