@@ -42,13 +42,17 @@ def predict():
         label = int(request.form.get('q2')) # 0 for No, 1 for Yes
         visualization=int(request.form.get('q3')) # 0 for No, 1 for Yes
         apply = int(request.form.get('q4')) # 0 for none, 1 for standardization, 2 for normalization
-        components = int(request.form.get('q5')) # get number input from use
+        components = request.form.get('q5') # get number input from use
+        if components.isdigit():
+            components=int(components)
+        else:
+            components=0
         file = request.files['file']
         file.save(file.filename)
         if header==1:
-            df = pd.read_csv(file.filename)
+            df = pd.read_csv('PCA/test-data-revised.csv')
         else:
-            df = pd.read_csv(file.filename,header=None)
+            df = pd.read_csv('PCA/test-data-revised.csv',header=None)
 
         if label==1:
             labeled=df[df.columns[-1]]
@@ -87,8 +91,8 @@ def predict():
                 pca1, trans1 = create_pca(X=X, n_components=components)
                 print(pca1.explained_variance_ratio_)#mention what it is : Shivesh
                 print(pca1.components_)# mention this to!
-                os.remove(file.filename)
-    return pca1.components_
+        os.remove(file.filename)
+    return str(pca1.components_)
 
                                                                                                                             
 
