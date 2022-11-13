@@ -6,3 +6,4 @@ matplotlib
 sklearn
 Jinja2
 Werkzeug
+gunicorn
