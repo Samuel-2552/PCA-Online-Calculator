@@ -4,6 +4,5 @@ pandas
 plotly
 matplotlib
 sklearn
-json
 Jinja2
 Werkzeug
