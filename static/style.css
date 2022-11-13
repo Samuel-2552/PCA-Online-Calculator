@@ -13,7 +13,7 @@
   width: 100%;
   padding: 2rem 1.5rem;
   text-align: center;
-  background: #fff;
+  background: #f0eae2;
   border-radius: 7px;
   border: 3px solid #eee;
   transition: all 0.2s ease;
@@ -86,12 +86,12 @@
   height: 8px;
   border: 0;
   border-radius: 4px;
-  background-color: #eee;
+  background-color: #fdfaf5;
   overflow: hidden;
 }
 .uploader .progress[value]::-webkit-progress-bar {
   border-radius: 4px;
-  background-color: #eee;
+  background-color: #fdfaf5;
 }
 .uploader .progress[value]::-webkit-progress-value {
   background: linear-gradient(to right, #393f90 0%, #454cad 50%);
@@ -123,7 +123,7 @@
   padding: 0 1rem;
   height: 36px;
   line-height: 36px;
-  color: #fff;
+  color: #fdfaf5;
   transition: all 0.2s ease-in-out;
   box-sizing: border-box;
   background: #fa8e00;

@@ -10,6 +10,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn import preprocessing
 from sklearn.decomposition import PCA
 import os
+import json
 app = Flask(__name__)
 
 def create_pca_label(X, y, n_components=None):
@@ -50,9 +51,9 @@ def predict():
         file = request.files['file']
         file.save(file.filename)
         if header==1:
-            df = pd.read_csv('PCA/test-data-revised.csv')
+            df = pd.read_csv(file.filename)
         else:
-            df = pd.read_csv('PCA/test-data-revised.csv',header=None)
+            df = pd.read_csv(file.filename,header=None)
         
         if label==1:
             labeled=df[df.columns[-1]]
@@ -71,6 +72,7 @@ def predict():
         if label==1:
             scaled['Label'] = labeled 
 
+        #before applying PCA Visualization #Shivesh add this as title
         if label==1 and visualization==1 and len(feats)>components:
             features = feats
             fig = px.scatter_matrix(
@@ -79,7 +81,8 @@ def predict():
                 color="Label"
             )
             fig.update_traces(diagonal_visible=True)
-            beforegraphJSON = plotly.offline.plot(fig, include_plotlyjs=False, output_type='div')
+            graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+            
 
         if label==1:
             X, y = scaled.drop(['Label'], axis=1), scaled['Label']
@@ -103,7 +106,7 @@ def predict():
                 print(pca1.components_)# mention this to!
         os.remove(file.filename)
 
-    return render_template('index.html',output=str(pca1.components_), before_pca=beforegraphJSON)
+    return render_template('index.html',before_pca=graphJSON,output1=str(pca1.explained_variance_ratio_),output2=str(pca1.components_))
 
                                                                                                                             
 

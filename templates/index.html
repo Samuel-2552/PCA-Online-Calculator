@@ -7,9 +7,10 @@
     <title>PCA Online Calculator</title>
     <meta name="description" content="PCA Front-End Design">
     <link rel="stylesheet" href="static/style.css"/>
-    <link rel="icon" href="PCA.png" type="image/png" sizes="16x16">
-    <link rel="icon" href="PCA.png" type="image/png" sizes="32x32">
-    <link rel="apple-touch-icon" href="PCA.png" sizes="180x180">
+    <link rel="icon" href="static/PCA.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="static/PCA.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="static/PCA.png" sizes="180x180">
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
     <style>
         :root {
             --ffsd: 0px;
@@ -3716,7 +3717,7 @@
                 </div>
                 <div id="H2BfPBvaUd4wODVE" style="z-index:2;position:relative;">
                     <div id="ndFeKzHwesKe8oUM"
-                        style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;"><svg
+                        style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;"><a href="#pk9iGwyw7qeviOdl"><svg
                             id="FhG7yj5aY6UBjpcx" viewBox="0 0 45.6604 10.8554" preserveAspectRatio="none"
                             style="overflow:hidden;top:0%;left:0%;width:100%;position:absolute;opacity:1.0;height:100%;">
                             <g id="gjmHAQcixyyAfdqz" style="transform:scale(1, 1);">
@@ -3724,18 +3725,18 @@
                                     d="M0.0,0.0 L45.66041439858432,0.0 L45.66041439858432,10.8554137443586 L0.0,10.8554137443586 L0.0,0.0"
                                     style="fill:#fd6d15;opacity:1.0;"></path>
                             </g>
-                        </svg></div>
+                        </svg></a></div>
                 </div>
                 <div id="ukuZhlHxcAE7GHpD" style="z-index:3;position:relative;">
                     <div id="S2iIMGCmaAx7uhrZ"
                         style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
                         <div id="t3v3UPNPzcssEIkO"
                             style="flex-direction:column;display:flex;width:100%;justify-content:center;opacity:1.0;height:100%;">
-                            <p id="LwPwjAlgTywBiJ1J"
+                            <a href="#pk9iGwyw7qeviOdl"><p id="LwPwjAlgTywBiJ1J"
                                 style="text-transform:uppercase;color:#000000;letter-spacing:0.077em;font-family:YADSwGZbFSo-0;line-height:1.4em;text-align:center;">
                                 <span id="s4dWPQbRPqlTsS7l" style="color:#000000;font-weight:700;">Try It
                                     Out!</span><br>
-                            </p>
+                            </p></a>
                         </div>
                     </div>
                 </div>
@@ -3781,7 +3782,7 @@
                                     <div id="Bu13YL1zQOMmlJpP"
                                         style="transform: rotate(0deg);  left: -38%; width: 170.645%; position: relative; opacity: 1; height: 170.346%;">
                                         <!-- Upload  -->
-                                        <form action="/predict" method="POST" id="file-upload-form" class="uploader"
+                                        <form action="/predict#sFSqDT0YD8QLfltk" method="POST" id="file-upload-form" class="uploader"
                                             enctype="multipart/form-data">
                                             <input id="file-upload" type="file" name="file" accept=".CSV" />
 
@@ -3847,11 +3848,6 @@
                             <p id="sr1fd7FQVDW0RNmT"
                                 style="color:#28282b;letter-spacing:-0.01em;font-family:YADSwGZbFSo-0;line-height:1.53em;">
                                 <span id="NofAtUGT5ygiic8B" style="color:#28282b;"><input type="radio" name="q2" value="1">Yes <input type="radio" name="q2" value="0" onclick="check()">No</span>
-                            </p>
-                            <p id="sUQtflMxUdNwyxAN"
-                                style="color:#28282b;letter-spacing:-0.01em;font-family:YADSwGZbFSo-0;line-height:1.53em;">
-                                <span id="MDzIMM1pSmRdkOk7" style="color:#28282b;white-space:pre-wrap;"> </span><span
-                                    id="uPXGX020JVm0gZt4" style="color:#28282b;">If Yes: </span>
                             </p>
                             <p id="hM6yhoWpSegBw81c"
                                 style="color:#28282b;letter-spacing:-0.01em;font-family:YADSwGZbFSo-0;line-height:1.53em;">
@@ -3979,7 +3975,7 @@
                                         <!--<img src="images/ef1b7c624d09065d52cddb4c636adb0a.png" alt="" loading="lazy"
                                             style="width:100%;height:100%;">-->
                                             <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-                                        {{befor_pca}}
+                                            <div id='chart' class='chart'”></div>
                                     </div>
                                 </div>
                             </div>
@@ -4008,7 +4004,7 @@
                                         style="transform: rotate(0deg); top: -12.8565%; left: 0%; width: 100%; position: relative; opacity: 1; height: 121.31%;">
                                         <!--<img src="images/c04e77d02f2b8ef15b9f31277ab96f2b.png" alt="" loading="lazy"
                                             style="width:100%;height:100%;">-->
-                                        {{befor_pca}}
+                                        {{after_pca}}
                                     </div>
                                 </div>
                             </div>
@@ -4032,10 +4028,11 @@
                         <div id="ZNiPeMLe2WH29P4y" style="top:0px;left:0px;width:100%;position:absolute;height:100%;">
                             <div id="b96BlLrq4Yfn55YH" style="width:100%;opacity:1.0;height:100%;">
                                 <div id="FfP7DB0Xc6xUEgmx"
-                                    style="transform:scale(1, 1);overflow:hidden;width:100%;height:100%;">
+                                    style="transform:scale(1, 1);width:100%;height:100%;">
                                     <div id="Mceo9JRMI4UdsvNq"
                                         style="transform: rotate(0deg); top: 0%; left: 0%; width: 100%; position: relative; opacity: 1; height: 100%;">
-                                        <p style="color:#fdfaf5;font-size: 15px;">{{output}}</p>
+                                        <p style="color:#fdfaf5;font-size: 15px;">{{output1}}</p>
+                                        <p style="color:#fdfaf5;font-size: 15px;">{{output2}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -4530,4 +4527,8 @@
         <p>{{output}}</p>
 </body>
 <script src="static/script.js"></script>
+<script type='text/javascript'>
+  var graphs = {{graphJSON | safe}};
+  Plotly.plot('chart',graphs,{});
+</script>
 </html>
