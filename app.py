@@ -11,6 +11,7 @@ from sklearn import preprocessing
 from sklearn.decomposition import PCA
 import os
 import json
+
 app = Flask(__name__)
 
 def create_pca_label(X, y, n_components=None):
@@ -110,8 +111,9 @@ def predict():
             #After PCA
             if label==1 and visualization==1 and len(feats)>=components:
 
-                pca = PCA()
+                pca = PCA(components)
                 components = pca.fit_transform(df[features])
+                print("compc", components.shape)
                 labels = {
                     str(i): f"PC {i+1} ({var:.1f}%)"
                     for i, var in enumerate(pca.explained_variance_ratio_ * 100)
@@ -119,7 +121,7 @@ def predict():
                 fig = px.scatter_matrix(
                 components,
                 labels=labels,
-                dimensions=range(len(features)),
+                dimensions=range(components.shape[1]),
                 color=scaled["Label"]
                 )
                 fig.update_traces(diagonal_visible=True)
@@ -129,7 +131,8 @@ def predict():
 
             return render_template('index.html',graphJSON1=graphJSON1,graphJSON2=graphJSON2,output1=str(pca1.explained_variance_ratio_),output2=str(pca1.components_))
 
-    except:
+    except Exception as e:
+        print(e)
         return render_template('index.html',output1="Something went wrong! Plz choose the following carefully according to your dataset!")
 
                                                                                                                             
