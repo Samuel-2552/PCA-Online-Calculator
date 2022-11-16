@@ -19,13 +19,17 @@ The source code for this project is provided in this GitHub Link below:
 
 https://github.com/Samuel-2552/PCA-Online-Calculator 
 
-There are 3 folders and 3 files in the main branch.
+There are 3 folders and 3 files in the default branch.
 
-•	The app.py file is python file which runs flask with the PCA code.
-•	The Procfile and the requirements.txt file are used for heroku deployment.
-•	The PCA folder has the python code for PCA and 3 different datasets.
-•	The templates folder has the index.html file in which we have developed the code for front end.
-•	The static folder has the style.css file and the script.js file necessary for the front development design and the required png images.
+*	The app.py file is python file which runs flask with the PCA code.
+
+*	The Procfile and the requirements.txt file are used for heroku deployment.
+
+*	The PCA folder has the python code for PCA and 3 different datasets.
+
+*	The templates folder has the index.html file in which we have developed the code for front end.
+
+*	The static folder has the style.css file and the script.js file necessary for the front development design and the required png images.
 
 This website has been deployed in heroku platform and can be accessed through the link provided below:
 
